@@ -13,13 +13,19 @@ export class HomePage {
   myTitleColor: string = "dark";
   
   arrData = []
+  myInput
 
   constructor(public navCtrl: NavController, private fdb: AngularFireDatabase) {
     this.fdb.list("/Thung/").subscribe(_data => {
       this.arrData = _data;
 
-      console.log(this.arrData)
+      console.log(this.arrData);
     });
+  }
+
+  toggleUpdate(item) {  
+    const items = this.fdb.list('/Thung');
+    items.update(item.$key, { status: item.status });
   }
 
 }

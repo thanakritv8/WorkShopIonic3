@@ -7,6 +7,6 @@
 <ion-content padding>
   <ion-item *ngFor="let item of arrData; let i = index">
     <ion-label><ion-icon [name]="myIcon" [color]="myIconColor"></ion-icon> {{item.name}}</ion-label>
-    <ion-toggle checked="{{item.status}}"></ion-toggle>
+    <ion-toggle (ionChange)="toggleUpdate(item)" [(ngModel)]="item.status"></ion-toggle>
   </ion-item>
 </ion-content>
