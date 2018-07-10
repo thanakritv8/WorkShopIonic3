@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar [color]="myTitleColor">
     <ion-title>
       Contact
     </ion-title>
@@ -7,11 +7,12 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+  <ion-list>    
+    <ion-item no-lines>
+      <ion-icon name="logo-google" item-start [color]="myIconGoogleColor"></ion-icon>thanakritv8@gmail.com
+    </ion-item>
+    <ion-item no-lines>
+      <ion-icon name="logo-skype" item-start [color]="myIconSkypeColor"></ion-icon>1hz@hotmail.co.th
     </ion-item>
   </ion-list>
 </ion-content>

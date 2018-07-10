@@ -7,6 +7,10 @@ import { NavController } from 'ionic-angular';
 })
 export class ContactPage {
 
+  myIconGoogleColor: string = "danger";
+  myIconSkypeColor: string = "primary";
+  myTitleColor: string = "dark";
+  
   constructor(public navCtrl: NavController) {
 
   }

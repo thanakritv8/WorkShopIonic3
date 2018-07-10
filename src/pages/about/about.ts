@@ -7,6 +7,8 @@ import { NavController } from 'ionic-angular';
 })
 export class AboutPage {
 
+  myTitleColor: string = "dark";
+  
   constructor(public navCtrl: NavController) {
 
   }

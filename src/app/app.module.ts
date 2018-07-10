@@ -11,6 +11,18 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+var config = {
+  apiKey: "AIzaSyA-sIXtkHrqEp0WevWPQtAbL0Q6t6crZVM",
+  authDomain: "deviceio-fae1f.firebaseapp.com",
+  databaseURL: "https://deviceio-fae1f.firebaseio.com",
+  projectId: "deviceio-fae1f",
+  storageBucket: "deviceio-fae1f.appspot.com",
+  messagingSenderId: "321430088917"
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +33,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
