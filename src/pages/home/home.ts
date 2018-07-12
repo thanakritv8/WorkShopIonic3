@@ -13,7 +13,6 @@ export class HomePage {
   myTitleColor: string = "dark";
   
   arrData = []
-  myInput
 
   constructor(public navCtrl: NavController, private fdb: AngularFireDatabase) {
     this.fdb.list("/Thung/").subscribe(_data => {
