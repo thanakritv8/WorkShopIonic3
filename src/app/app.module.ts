@@ -13,6 +13,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { GooglePlus } from '@ionic-native/google-plus';
+
 
 var config = {
   apiKey: "AIzaSyA-sIXtkHrqEp0WevWPQtAbL0Q6t6crZVM",
@@ -35,6 +39,7 @@ var config = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
@@ -48,6 +53,7 @@ var config = {
   providers: [
     StatusBar,
     SplashScreen,
+    GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

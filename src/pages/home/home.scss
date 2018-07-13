@@ -7,5 +7,22 @@ page-home {
         width: 100%;
         height: 100%;
         text-align: center;
-      }
+    }
+    .image {
+        height: 5vw; 
+        width: 5vw; 
+        border: 2px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 5px gray;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+   }
+   
+   .circle-pic{
+       width:70%;
+       height:70%;
+       -webkit-border-radius: 50%;
+       border-radius: 50%;
+   }
 }

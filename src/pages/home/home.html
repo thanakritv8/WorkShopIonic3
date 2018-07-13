@@ -1,10 +1,21 @@
 <ion-header>
   <ion-navbar [color]="myTitleColor">
     <ion-title>Home</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <p *ngIf="arrData.length == 0"><button ion-button block color="danger" (click)="loginUser()" *ngIf="!userProfile">
+      <ion-icon name="logo-googleplus"></ion-icon> 
+      Login with Google
+    </button>
+  </p>
+
   <ion-item *ngFor="let item of arrData; let i = index">
     <ion-label><ion-icon [name]="myIcon" [color]="myIconColor"></ion-icon> {{item.name}}</ion-label>
     <ion-toggle (ionChange)="toggleUpdate(item)" [(ngModel)]="item.status"></ion-toggle>
