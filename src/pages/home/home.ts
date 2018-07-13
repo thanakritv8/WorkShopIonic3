@@ -26,7 +26,7 @@ export class HomePage {
   userProfile: any = null;
   constructor(public navCtrl: NavController, private fdb: AngularFireDatabase, private googlePlus: GooglePlus) {
     this.navCtrl = navCtrl;
-    this.fdb.list("/Thung1y/").subscribe(_data => {
+    this.fdb.list("/Thung/").subscribe(_data => {
       this.arrData = _data;
 
       console.log(this.arrData);

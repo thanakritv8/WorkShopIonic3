@@ -7,6 +7,7 @@ import { SettingPage } from '../pages/setting/setting';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { SubsettingPage } from '../pages/subsetting/subsetting'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,8 @@ var config = {
     SettingPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SubsettingPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ var config = {
     SettingPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    SubsettingPage
   ],
   providers: [
     StatusBar,

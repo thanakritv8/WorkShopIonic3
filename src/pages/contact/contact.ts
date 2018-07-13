@@ -9,6 +9,7 @@ export class ContactPage {
 
   myIconGoogleColor: string = "danger";
   myIconSkypeColor: string = "primary";
+  myIconCallColor: string = "secondary";
   myTitleColor: string = "dark";
   
   constructor(public navCtrl: NavController) {

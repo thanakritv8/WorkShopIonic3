@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title [color]="myTitleColor">Device IO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item no-lines>
+    <ion-label>Off Timer</ion-label>
+    <ion-datetime (ionChange)="timesetUpdate(item)" displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="item.timeset"></ion-datetime>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-label>Use Off Timer</ion-label>
+    <ion-toggle (ionChange)="timestatusUpdate(item)" [(ngModel)]="item.timestatus"></ion-toggle>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-label>Rename</ion-label>
+    <ion-input [(ngModel)]="tbRename" type="text" placeholder="{{item.name}}"></ion-input>
+    <button ion-button clear item-right (click)="renameUpdate(item)">SAVE</button>
+  </ion-item>
+</ion-content>

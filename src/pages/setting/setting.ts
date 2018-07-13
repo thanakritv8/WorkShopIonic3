@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireDatabase} from 'angularfire2/database';
+import { SubsettingPage } from '../subsetting/subsetting'
 
 @Component({
   selector: 'page-setting',
@@ -9,7 +10,7 @@ import { AngularFireDatabase} from 'angularfire2/database';
 export class SettingPage {
   
   myIcon: string = "settings";
-  myIconColor: string = "dark";
+  myIconColor: string = "primary";
   myTitleColor: string = "dark";
   arrData = []
   constructor(public navCtrl: NavController, private fdb: AngularFireDatabase) {
@@ -18,6 +19,10 @@ export class SettingPage {
 
       console.log(this.arrData);
     });
+  }
+
+  openNavDetailsPage(item) {
+    this.navCtrl.push(SubsettingPage, { item: item });
   }
 
 }
