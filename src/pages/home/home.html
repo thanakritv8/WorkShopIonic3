@@ -10,11 +10,38 @@
 </ion-header>
 
 <ion-content padding>
-  <p *ngIf="arrData.length == 0"><button ion-button block color="danger" (click)="loginUser()" *ngIf="!userProfile">
+  <!--<p *ngIf="statusLogin == false">
+    <button ion-button block color="danger" (click)="loginUser()" *ngIf="!statusLogin">
       <ion-icon name="logo-googleplus"></ion-icon>
-      Login with Google
+      Login with Google {{authEmail}}
     </button>
-  </p>
+  </p>-->
+  <div *ngIf="isLoggedIn; else loginTemplate">
+    <h1>Welcome, {{displayName}}!</h1>
+    <p>
+      Email: {{email}}<br>
+      Family Name: {{familyName}}<br>
+      Given Name: {{givenName}}<br>
+      User ID: {{userId}}
+    </p>
+    <p>
+      <ion-avatar item-left>
+        <img src="{{imageUrl}}">
+      </ion-avatar>
+    </p>
+    <p><button ion-button (click)="logoutUser()">Logout From Google</button></p>
+  </div>
+  <ng-template #loginTemplate>
+    <h1>Please Login to see your Google Account Information</h1>
+    <p><button ion-button (click)="loginUser()">Login With Google</button></p>
+  </ng-template>
+
+  <!--<p *ngIf="statusLogin == true">
+    <button ion-button block color="danger" (click)="logoutUser()" *ngIf="!statusLogin">
+      <ion-icon name="logo-googleplus"></ion-icon>
+      Logout {{authEmail}}
+    </button>
+  </p>-->
 
   <ion-item *ngFor="let item of arrData; let i = index">
     <ion-label><ion-icon [name]="myIcon" [color]="myIconColor"></ion-icon> {{item.name}}</ion-label>
