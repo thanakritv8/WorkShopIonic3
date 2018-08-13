@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Alert } from 'ionic-angular';
 import { AngularFireDatabase} from 'angularfire2/database';
 
 import { GooglePlus } from '@ionic-native/google-plus';
@@ -42,7 +42,23 @@ export class HomePage {
 
   }
 
-  loginUser() {
+  loginUser(): void {
+    console.log("test");
+    this.googlePlus.login({
+      'webClientId': '321430088917-99glfg5jmsj909egrjdcnc3bb19ql3mu.apps.googleusercontent.com',
+      'offline': true
+    }).then((user) => {
+      this.email = user.email;
+      this.isLoggedIn = true;
+      console.log(user.displayName + " " + user.email)
+      alert("user");
+    },function (error) {
+      console.log(error);
+      alert(error);
+    })
+  }
+
+  /*loginUser() {
     this.googlePlus.login({})
     .then(res => {
       console.log(res);
@@ -54,9 +70,10 @@ export class HomePage {
       this.imageUrl = res.imageUrl;
 
       this.isLoggedIn = true;
+      console.log(res.email);
     })
     .catch(err => console.error(err));
-  }
+  }*/
 
   logoutUser(){
     this.googlePlus.logout()
